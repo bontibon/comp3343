@@ -16,8 +16,8 @@ Clients can:
 - Install prerequisites
     - [protoc](https://github.com/google/protobuf/)
     - [goprotobuf](https://code.google.com/p/goprotobuf/)
-    - [github.com/mattn/go-sqlite3](github.com/mattn/go-sqlite3)
-    - [github.com/spf13/cobra](github.com/spf13/cobra)
+    - [github.com/mattn/go-sqlite3](https://github.com/mattn/go-sqlite3)
+    - [github.com/spf13/cobra](https://github.com/spf13/cobra)
 - `make`
 - `./server`
 
