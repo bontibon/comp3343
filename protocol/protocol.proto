@@ -1,0 +1,39 @@
+package protocol;
+
+message Packet {
+  enum Type {
+    Query       = 1;
+    MessageIds  = 2;
+    Fetch       = 3;
+    Send        = 4;
+  }
+  required Type type              = 1;
+  optional Query query            = 2;
+  optional MessageIds message_ids = 3;
+  optional Messages messages      = 4;
+}
+
+message Query {
+  required string mailbox = 1;
+}
+
+message MessageIds {
+  required string mailbox = 1;
+  repeated string ids     = 2;
+}
+
+message Send {
+  required Message mesage = 1;
+}
+
+message Messages {
+  repeated Message messages = 1;
+}
+
+message Message {
+  required int32 id        = 1;
+  required string mailbox  = 2;
+  required string sender   = 3;
+  required string timestamp = 4;
+  required string body     = 5;
+}
