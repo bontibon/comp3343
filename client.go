@@ -94,7 +94,7 @@ func main() {
 			}
 			messageIds := resp.MessageIds
 			if *resp.Type != protocol.Packet_MessageIds || messageIds == nil || messageIds.Ids == nil {
-				fmt.Fprintf(os.Stderr, "no message ids is packet\n", err)
+				fmt.Fprintf(os.Stderr, "no messages\n")
 				return
 			}
 			for _, id := range messageIds.Ids {
@@ -147,7 +147,7 @@ func main() {
 					fmt.Fprintf(os.Stderr, "%s\n", err)
 					continue
 				}
-				fmt.Fprintf(f, "ID: %d\n", *message.Id)
+				fmt.Fprintf(f, "ID: %s\n", *message.Id)
 				fmt.Fprintf(f, "Mailbox: %s\n", *message.Mailbox)
 				fmt.Fprintf(f, "Sender: %s\n", *message.Sender)
 				fmt.Fprintf(f, "Timestamp: %s\n", *message.Timestamp)
@@ -196,7 +196,7 @@ func main() {
 			str := string(arr)
 			packet.Messages.Messages = []*protocol.Message{
 				&protocol.Message{
-					Id:        proto.Int32(-1),
+					Id:        proto.String(""),
 					Mailbox:   &args[0],
 					Sender:    proto.String(""),
 					Timestamp: proto.String(""),

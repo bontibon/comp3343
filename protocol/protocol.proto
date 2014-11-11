@@ -31,9 +31,9 @@ message Messages {
 }
 
 message Message {
-  required int32 id        = 1;
-  required string mailbox  = 2;
-  required string sender   = 3;
+  required string id        = 1;
+  required string mailbox   = 2;
+  required string sender    = 3;
   required string timestamp = 4;
-  required string body     = 5;
+  required string body      = 5;
 }

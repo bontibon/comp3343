@@ -74,7 +74,7 @@ func handlePacket(conn *net.UDPConn, addr *net.UDPAddr, packet protocol.Packet) 
 			if row == nil {
 				continue
 			}
-			var id int32
+			var id string
 			var mailbox string
 			var sender string
 			var timestamp string
